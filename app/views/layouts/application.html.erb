@@ -11,6 +11,9 @@
   </head>
 
   <body>
+  <% if flash[:notice].present? %>
+  <p class="mb mt message message-notice"><%=flash[:notice] %></p>
+  <% end %>
   <div class="wrapper">
     <%= yield %>
     </div>

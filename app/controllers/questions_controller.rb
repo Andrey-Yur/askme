@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: %i[update show destroy edit]
   def create
     question = Question.create(question_params)
-    redirect_to question_path(question)
+    redirect_to question_path(question), notice: "New question has created!"
   end
 
   def update
