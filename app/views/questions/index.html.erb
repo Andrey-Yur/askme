@@ -6,7 +6,10 @@
 </p>
 </div>
 <div class="container mt-sm">
-<h2 class="title-lg">All Questions</h2>
+<h2 class="title-lg">
+<%=@questions.count %>
+<%= multi(@questions.count, "question", "questions")%>
+ </h2>
 </div>
  <% @questions.each do |question|%> 
 <div class="mt-sm container">
