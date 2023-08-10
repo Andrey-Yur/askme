@@ -14,3 +14,21 @@ body {
 	background: #fff;
 	padding: 20px;
 }
+
+.container,
+.navbar {
+	padding: 20px;
+}
+
+.navbar {
+	align-items: center;
+	background-color: #370617;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+}
+
+.navbar a {
+	color: #fff;
+	text-decoration: none;
+}
