@@ -9,7 +9,6 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
   <div class="wrapper">
   <div class="navbar">
@@ -17,7 +16,7 @@
   <div>
   <% if current_user.present? %>
   <%= content_tag "span", "@#{current_user.nickname}", class: "mr-sm" %>
-  <%= button_to "Logout", session_path, method: :delete %>
+  <%= button_to "Logout", session_path, method: :delete, class: "button button-yellow" %>
   <% else %>
   <%= link_to "Signup", new_user_path, class: "button button-yellow mr-sm" %>
   <%= link_to "Login", new_session_path, class: "button button-yellow" %>
