@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to root_path, notice: "User's data updated"
+      redirect_to questions_path, notice: "User's data updated"
     else
       flash.now[:alert] = "In an attempt of saving data have existed errors"
       render :edit

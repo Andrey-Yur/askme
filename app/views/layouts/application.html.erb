@@ -12,8 +12,9 @@
   <body>
   <div class="wrapper">
   <div class="navbar">
-  <p class="title-sm text-bold"><%= link_to "Askme!", root_path %></p>
+  <p class="title-sm text-bold"><%= link_to_if current_user.present?, "Askme!", questions_path %></p>
   <div>
+  
   <% if current_user.present? %>
   <%= content_tag "span", "@#{current_user.nickname}", class: "mr-sm" %>
   <%= link_to fa_icon("user"), edit_user_path(current_user.id), class: "button button-yellow mr-sm" %>
@@ -25,11 +26,11 @@
   </div>
   </div>
     <% if flash[:notice].present? %>
-    <p class="mb mt message message-notice"><%=flash[:notice] %></p>
+    <p class="message message-notice"><%=flash[:notice] %></p>
     <% elsif flash[:alert].present? %>
-    <p class="mb mt message message-alert"><%=flash[:alert] %></p>
-    <% end %>
+    <p class="message message-alert"><%=flash[:alert] %></p>
+    <% end %>  
     <%= yield %>
-    </div>
+    </div>   
   </body>
 </html>

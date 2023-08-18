@@ -1,9 +1,10 @@
 <div class="mb-sm">
-<%= question.body %>
+<%= question.body %> 
 </div>
 <div class="text-sm question-footer">
 <div class="text-grey">
-<%= l(question.created_at, format: :short) %>
+<%= l(question.created_at, format: :short) %> 
+<p>To User: <%= question.user_id %></p>
 </div>
 <div>
 <%= link_to fa_icon("pencil"), edit_question_path(question), title: "Change question" %>

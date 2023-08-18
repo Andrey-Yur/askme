@@ -1,18 +1,25 @@
 <div class="container">
-<p class="mt">
-<%= link_to "Create new question", new_question_path, class: "button button-main" %></p>
-<p class="mt">
-<%= render "form", question: @question %>
-</p>
+<% if current_user.present? %>
+<p class="mt"><%= render "form", question: @question %> <span><%= link_to "New question", new_question_path, class: "button button-main" %></span></p>
+<p><%= link_to "New question", new_question_path, class: "button button-main" %></p>
 </div>
 <div class="container mt-sm">
 <h2 class="title-lg">
-<%=@questions.count %>
+<%= @questions.count %>
 <%= multi(@questions.count, "question", "questions")%>
  </h2>
 </div>
+<% if user_questions.present?%>
+<p>pre</p>
+<%end%>
  <% @questions.each do |question|%> 
+ <% if current_user.id == question.user_id %>
 <div class="mt-sm container">
-<%= render question %>
+ <%= render question %> 
 </div>
 <% end %>
+<% end %>
+<% end %>
+
+
+
