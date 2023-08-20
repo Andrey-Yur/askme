@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path, notice: "You successfully have signed up"
+      redirect_to root_path, notice: "You successfully signed up"
     else
       flash.now[:alert] = "You put wrong data in form"
       render :new
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to questions_path, notice: "User's data updated"
     else
-      flash.now[:alert] = "In an attempt of saving data have existed errors"
+      flash.now[:alert] = "Error at an attempt of saving data"
       render :edit
     end
   end

@@ -21,8 +21,10 @@
 <p><%= form.password_field :password_confirmation, class: "form-text-field" %></p>
 <div class="mt"><%= form.submit "Save", class: "button button-main" %>
 <% end %>
-<p class="mt"><%= link_to "<< Previous page", :back %></p>
+<span><%= button_to "Delete profile", user_path(@user), method: :delete, form: {data: {turbo_confirm: "Are you sure to delete your profile?"}}, class: "button button-inverse-main " %></span>
 </div>
-<div><%= button_to "Delete profile", user_path(@user), method: :delete, form: {data: {turbo_confirm: "Are you sure to delete your profile?"}}, class: "button button-inverse-main " %></div></div>
+<div class="mt-lg"><span ><%= link_to "<< Previous page", :back %></span>
+</div>
+</div>
 </div>
 

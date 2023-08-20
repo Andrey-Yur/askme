@@ -1,7 +1,6 @@
 <div class="container">
 <% if current_user.present? %>
-<p class="mt"><%= render "form", question: @question %> <span><%= link_to "New question", new_question_path, class: "button button-main" %></span></p>
-<p><%= link_to "New question", new_question_path, class: "button button-main" %></p>
+<div class="mt"><%= render "form", question: @question %> <span><%= link_to "New question", new_question_path, class: "button button-main" %></span></div>
 </div>
 <div class="container mt-sm">
 <h2 class="title-lg">
