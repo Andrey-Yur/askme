@@ -8,9 +8,9 @@
 <%= form_with model: question, data: {turbo: false} do |form| %>
  <p><%= form.label :body, 'Question'%></p>
 <p><%= form.text_area :body, rows: 5, class: "form-text-area" %></p>
-<p class="mt"><%= form.label :user_id %></p>
-<p><%= form.text_field :user_id, class: "form-text-field" %></p>
-  <%= form.hidden_field :from_user_id, value: current_user.id %>
+<p class="mt"><%= form.label :user %></p>
+<p><%= form.select :user_id, all_users_nicknames ,{}, class: "mt form-text-field title-sm"%></p>
+ <%= form.hidden_field :from_user_id, value: current_user.id %>
 <p class="mt"><%= form.submit 'Save', class: "button button-main" %></p>
 <% end %>
 

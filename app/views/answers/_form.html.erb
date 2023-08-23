@@ -1,5 +1,4 @@
 <%= text_area_tag 'question_body',question.body, class: "form-text-area-answer", readonly: true, rows: 2 %>
-
 <%= form_with model:@answer, local: true,url:question_answers_path(question),method: :post,data: {turbo: false} do |form| %>
   <p class="mb"><%= form.label :body, 'Answer'%></p>
   <p><%= form.text_area :body, rows: 5, class: "form-text-area", value:"Dear #{@nickname}!" %></p>

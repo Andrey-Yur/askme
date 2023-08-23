@@ -137,6 +137,9 @@ GEM
     parser (3.2.2.3)
       ast (~> 2.4.1)
       racc
+    pluck_all (2.3.4)
+      activesupport (>= 3.0.0)
+      rails_compatibility (>= 0.0.10)
     public_suffix (5.0.3)
     puma (5.6.6)
       nio4r (~> 2.0)
@@ -165,6 +168,8 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails_compatibility (0.0.10)
+      activerecord (>= 3)
     railties (7.0.6)
       actionpack (= 7.0.6)
       activesupport (= 7.0.6)
@@ -244,6 +249,7 @@ DEPENDENCIES
   font-awesome-rails
   importmap-rails
   jbuilder
+  pluck_all
   puma (~> 5.0)
   rails (~> 7.0.6)
   rubocop

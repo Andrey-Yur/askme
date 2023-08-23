@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  # root to: "questions#index"
   root to: "sessions#new"
-  # resources :answers
   resources :questions do
     resource :answers
   end

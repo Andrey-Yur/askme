@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :user_questions, :answers_for_user
+  require 'pluck_all'
+  helper_method :current_user, :user_questions, :answers_for_user, :all_users_nicknames
 
   private
 
@@ -14,5 +15,9 @@ class ApplicationController < ActionController::Base
   def answers_for_user
     answered = Question.where(user_id: 0, from_user_id: session[:user_id]).map(&:id)
     @answers_for_user ||= Answer.find_by(question_id: answered) if session[:user_id]
+  end
+
+  def all_users_nicknames
+    @all_users_nicknames ||= User.where.not(id: current_user.id).pluck_array(:nickname, 'id') if session[:user_id]
   end
 end

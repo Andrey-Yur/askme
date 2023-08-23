@@ -1,12 +1,12 @@
 class QuestionsController < ApplicationController
   # skip_before_action :verify_authenticity_token
   before_action :set_question, only: %i[update show destroy edit]
+
   def create
     @question = Question.new(question_params)
     if @question.save
       redirect_to questions_path, notice: "New question has created"
     else
-      # redirect_to questions_path, alert: "Something went wrong at saving your question"
       flash.now[:alert] = "Something went wrong at saving your question"
       render :new
 
