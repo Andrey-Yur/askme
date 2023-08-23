@@ -1,7 +1,7 @@
 .form-text-area,
 .form-text-field {
 	border: 1px solid #d0d0d0;
-	padding: 7.5px 10px;
+	padding: 7px 10px;
 }
 
 .form-text-area:focus,
@@ -12,5 +12,12 @@
 
 .form-text-area {
 	box-sizing: border-box;
+	width: 100%;
+}
+.form-text-area-answer {
+	border: none;
+	font-weight: bold;
+	font-style: italic;
+	color: #370617;
 	width: 100%;
 }

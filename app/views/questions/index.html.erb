@@ -1,23 +1,33 @@
 <div class="container">
 <% if current_user.present? %>
-<div class="mt"><%= render "form", question: @question %> <span><%= link_to "New question", new_question_path, class: "button button-main" %></span></div>
+<div>
+  <span class="title">Ask a question to anyone by clicking on the button</span>
+  <span><%= link_to "New question", new_question_path, class: "button button-main" %></span>
 </div>
-<div class="container mt-sm">
-<h2 class="title-lg">
+<!--</div>-->
+<!--<div class="mt-sm container">-->
+<h2 class="mt title">You have
 <%= @questions.count %>
 <%= multi(@questions.count, "question", "questions")%>
  </h2>
-</div>
-<% if user_questions.present?%>
-<p>pre</p>
+<!--</div>-->
+    </div>
+<% if user_questions.present? %>
+      <% @questions.each do |question|%>
+        <div class="mt-sm container"><%= render question %></div>
+      <% end %>
 <%end%>
- <% @questions.each do |question|%> 
- <% if current_user.id == question.user_id %>
-<div class="mt-sm container">
- <%= render question %> 
-</div>
-<% end %>
-<% end %>
+    <div class="mt-sm container">
+      <h2 class="title"> You received
+        <%= @answers.count %>
+        <%= multi(@answers.count, "answer", "answers")%>
+      </h2>
+    </div>
+    <% if answers_for_user.present? %>
+      <%= @answers.each do |answer| %>
+        <div class="mt-sm container"><%= render answer %></div>
+      <% end %>
+    <% end %>
 <% end %>
 
 

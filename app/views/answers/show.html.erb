@@ -1,0 +1,10 @@
+<div class="container">
+  <h2 class="tittle-lg mb">Answer for SHOW <%= @question.id%></h2>
+  <%= text_area_tag 'question_body',@question.body, class: "form-text-area mb", :readonly =>true %>
+  <%= form_with model: @answer do |form| %>
+    <p><%= form.label :body, 'Answer'%></p>
+    <p><%= form.text_area :body, rows: 5, class: "form-text-area" %></p>
+        <%= form.text_area :question_id, value: @question.id %>
+    <p class="mt"><%= form.submit 'Send', class: "button button-main" %></p>
+  <% end %>
+</div>

@@ -1,0 +1,13 @@
+<div class="mb-sm">
+  <%= answer.body %>
+</div>
+<div class="text-sm question-footer">
+  <div class="text-grey">
+    <%= l(answer.created_at, format: :short) %>
+    <p>From: <%= "@#{current_user.nickname}  PIZDESH" %></p>
+  </div>
+  <div>
+    <%#= button_to fa_icon("trash-o 2x"), question_path(question), method: :delete, title: "Delete question" %>
+    <%= button_to fa_icon("trash-o 2x"), questions_path, method: :delete,data: {turbo: false}, title: "Delete answer" %>
+  </div>
+</div>
