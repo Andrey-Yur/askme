@@ -4,7 +4,7 @@
 <div class="text-sm question-footer">
   <div class="text-grey">
     <%= l(answer.created_at, format: :short) %>
-    <p>From: <%= "@#{current_user.nickname}" %></p>
+    <p>From: <%= "@#{get_user_by_id(answer.question[:from_user_id]).first}"  %></p>
   </div>
   <div>
    <%= button_to fa_icon("trash-o 2x"), question_path(answer.question_id), method: :delete,data: {turbo: false}, title: "Delete answer" %>

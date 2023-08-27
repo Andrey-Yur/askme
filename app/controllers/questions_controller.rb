@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  # include ActionController::Live
   # skip_before_action :verify_authenticity_token
   before_action :set_question, only: %i[update show destroy edit]
 
@@ -11,15 +12,6 @@ class QuestionsController < ApplicationController
       render :new
 
     end
-    # @question.save
-    # if @question.save
-    # # question = Question.create(question_params)
-    # # if question.create
-    # redirect_to question_path(@question), notice: "New question has created"
-    # flash.now[:alert] = "Something went wrong at saving your question"
-    # render :new
-    # end
-    #
   end
 
   def update

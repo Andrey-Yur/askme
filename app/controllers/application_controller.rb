@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   require 'pluck_all'
-  helper_method :current_user, :user_questions, :answers_for_user, :all_users_nicknames
+
+  helper_method :current_user, :user_questions, :answers_for_user, :all_users_nicknames, :get_user_by_id
+  # after_action -> { flash[:notice] = nil }, if: -> { request.xhr? }
 
   private
 
@@ -19,5 +21,9 @@ class ApplicationController < ActionController::Base
 
   def all_users_nicknames
     @all_users_nicknames ||= User.where.not(id: current_user.id).pluck_array(:nickname, 'id') if session[:user_id]
+  end
+
+  def get_user_by_id(id)
+    @user_nickname ||= User.where(id:).pluck(:nickname) if session[:user_id]
   end
 end

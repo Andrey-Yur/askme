@@ -4,11 +4,9 @@
 <div class="text-sm question-footer">
 <div class="text-grey">
 <%= l(question.created_at, format: :short) %> 
-<p>To: <%= "@#{current_user.nickname}" %></p>
+<p>From: <%= "@#{get_user_by_id(question.from_user_id).first}" %></p>
 </div>
 <div>
   <%= link_to fa_icon("reply 2x"), new_question_answers_path(question.id), title: "Reply question" %>
-<%#= link_to fa_icon("pencil 2x"), edit_question_path(question), title: "Change question" %>
-<%#= button_to fa_icon("trash-o 2x"), question_path(question), method: :delete, title: "Delete question" %>
 </div>
 </div>

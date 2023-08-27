@@ -4,14 +4,11 @@
   <span class="title">Ask a question to anyone by clicking on the button</span>
   <span><%= link_to "New question", new_question_path, class: "button button-main" %></span>
 </div>
-<!--</div>-->
-<!--<div class="mt-sm container">-->
 <h2 class="mt title">You have
 <%= @questions.count %>
 <%= multi(@questions.count, "question", "questions")%>
  </h2>
-<!--</div>-->
-    </div>
+ </div>
 <% if user_questions.present? %>
       <% @questions.each do |question|%>
         <div class="mt-sm container"><%= render question %></div>
