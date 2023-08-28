@@ -15,8 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
-    redirect_to({ action: 'new' }, { notice: "You successfully logout" })
-
-    # redirect_to({ path: new_session_path }, { notice: "You successfully logout" })
+    # redirect_to({ action: 'new' }, { notice: "You successfully logout" })
+    redirect_to root_path, notice: "You successfully logout"
   end
 end

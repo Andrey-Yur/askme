@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   require 'pluck_all'
 
   helper_method :current_user, :user_questions, :answers_for_user, :all_users_nicknames, :get_user_by_id
-  # after_action -> { flash[:notice] = nil }, if: -> { request.xhr? }
 
   private
 

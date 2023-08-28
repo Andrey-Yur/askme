@@ -1,5 +1,6 @@
 class AnswersController < ApplicationController
   before_action :set_nickname
+
   def new
     @question = Question.find(params[:question_id])
     @answer = @question.build_answer
@@ -16,6 +17,7 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
     if @answer.save
       @question.update(user_id: 0)
+
       redirect_to questions_path, notice: "Answer was sent"
     else
       redirect_to new_question_answers_path(@question), alert: "Something went wrong at saving your answer"

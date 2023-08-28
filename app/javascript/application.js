@@ -1,7 +1,7 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "@hotwired/turbo-rails"
 import "controllers"
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbo:load", () => {
     console.log("DOM готов!");
     const flashMsg =  document.querySelector('.message')
     if (flashMsg !=null) setTimeout(()=>{
